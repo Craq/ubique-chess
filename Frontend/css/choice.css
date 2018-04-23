@@ -37,6 +37,7 @@ button{
     font-size: 16px;
     color: #d8dbdd;
 }
+button:focus {outline:0;}
 @media(max-width: 1024px){
     button{
         margin-left:5%;
