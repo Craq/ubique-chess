@@ -12,3 +12,9 @@ exports.h2h = function(req, res) {
         pageTitle:'Human VS Human'
     })
 };
+
+exports.chooseChess = function(req, res) {
+    res.render('chooseChess',{
+        pageTitle:'Choice'
+    })
+};
