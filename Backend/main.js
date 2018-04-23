@@ -12,6 +12,7 @@ function configureEndpoints(app) {
     //Сторінки
     //Головна сторінка
     app.get('/', pages.mainPage);
+    app.get('/h2h.html', pages.h2h);
     //Якщо не підійшов жоден url, тоді повертаємо файли з папки www
     app.use(express.static(path.join(__dirname, '../Frontend')));
 }

@@ -3,12 +3,12 @@
  */
 exports.mainPage = function(req, res){
     res.render('mainPage', {
-        pageTitle: 'Вибір піци'
+        pageTitle: 'Human VS Stockfish'
     });
 };
 
-exports.orderPage = function(req, res) {
-    res.render('orderPage',{
-        pageTitle:'Замовити піцу'
+exports.h2h = function(req, res) {
+    res.render('h2h',{
+        pageTitle:'Human VS Human'
     })
 };
