@@ -1,11 +1,21 @@
 <body>
-<div class="holder">gi
-    <div class="playground">
-        <div id="board" style="width: 680px"></div>
-    </div>
-    <p>Status: <span id="status"></span></p>
-    <div class="controls">
-        <button id="newGame">New game</button>
-        <div id="consoleLog">PGN: <span id="pgn"></span></div>
+<div class="container">
+    <div class="holder">
+        <div class="outbox">
+            <div class="controls">
+                <p>Status: <span id="status"></span></p>
+                <div id="consoleLog">PGN: <span id="pgn"></span></div>
+                <button id="newGame" class="btn btn-warning">New game</button>
+            </div>
+        </div>
+        <div class="playground">
+            <div id="board"></div>
+        </div>
+        <div class="outbox">
+            <div class="controls">
+                <div id="consoleLog">PGN: <span id="pgn"></span></div>
+                <button id="newGame">New game</button>
+            </div>
+        </div>
     </div>
 </div>
