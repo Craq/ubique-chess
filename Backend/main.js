@@ -14,6 +14,7 @@ function configureEndpoints(app) {
     app.get('/', pages.mainPage);
     app.get('/h2h.html', pages.h2h);
     app.get('/choice.html', pages.chooseChess);
+    app.get('/strats.html',pages.strats);
     //Якщо не підійшов жоден url, тоді повертаємо файли з папки www
     app.use(express.static(path.join(__dirname, '../Frontend')));
 }

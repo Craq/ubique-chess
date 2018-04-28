@@ -18,3 +18,8 @@ exports.chooseChess = function(req, res) {
         pageTitle:'Choice'
     })
 };
+exports.strats = function(req, res) {
+    res.render('strats',{
+        pageTitle:'strats'
+    })
+};
