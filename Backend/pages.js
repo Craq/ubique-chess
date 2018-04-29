@@ -1,9 +1,9 @@
 /**
  * Created by chaika on 09.02.16.
  */
-exports.mainPage = function(req, res){
-    res.render('mainPage', {
-        pageTitle: 'Human VS Stockfish'
+exports.choice = function(req, res){
+    res.render('chooseChess', {
+        pageTitle: 'Choice'
     });
 };
 
@@ -13,13 +13,13 @@ exports.h2h = function(req, res) {
     })
 };
 
-exports.chooseChess = function(req, res) {
-    res.render('chooseChess',{
-        pageTitle:'Choice'
+exports.h2m = function(req, res) {
+    res.render('h2m',{
+        pageTitle:'Human VS Stockfish'
     })
 };
 exports.strats = function(req, res) {
     res.render('strats',{
-        pageTitle:'strats'
+        pageTitle:'Strats'
     })
 };

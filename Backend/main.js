@@ -11,10 +11,10 @@ function configureEndpoints(app) {
 
     //Сторінки
     //Головна сторінка
-    app.get('/', pages.mainPage);
-    app.get('/h2h.html', pages.h2h);
-    app.get('/choice.html', pages.chooseChess);
-    app.get('/strats.html',pages.strats);
+    app.get('/', pages.choice);
+    app.get('/h2h', pages.h2h);
+    app.get('/h2m', pages.h2m);
+    app.get('/strats',pages.strats);
     //Якщо не підійшов жоден url, тоді повертаємо файли з папки www
     app.use(express.static(path.join(__dirname, '../Frontend')));
 }
