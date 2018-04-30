@@ -5,7 +5,12 @@
 <script src="js/enginegame.js"></script>
 <script>
     var wait_for_script;
+    var game;
     var newGame = function (){};
+
+    $('#newGame').click(function(){
+        init();
+    });
 
     /// We can load Stockfish.js via Web Workers or directly via a <script> tag.
     /// Web Workers are better since they don't block the UI, but they are not always avaiable.
@@ -26,7 +31,7 @@
 
     function init()
     {
-        var game = engineGame();
+        game = engineGame();
 
         newGame = function newGame() {
             var baseTime = 5 * 60;

@@ -23,7 +23,6 @@ a {
     text-decoration: none;
 }
 button{
-
     display: block;
     text-align: center;
     width: 150px;
@@ -38,21 +37,27 @@ button{
     color: #d8dbdd;
 }
 button:focus {outline:0;}
-@media(max-width: 1024px){
+@media(max-width: 1050px){
     button{
-        margin-left:5%;
+        margin-left:6%;
         font-size: 14px;
     }
 }
-@media(max-width: 850px){
+@media(max-width: 930px){
     button{
         width: 100px;
+        margin-left: 16%;
     }
 }
 @media(max-width: 780px){
     .choicebox{
         width: 120px;
         margin-left: 30%;
+    }
+}
+@media(max-width: 720px){
+    button{
+        margin-left: 6%;
     }
 }
 @media(max-width: 200px){
