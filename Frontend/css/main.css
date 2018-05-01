@@ -26,9 +26,13 @@
     box-shadow: 0px -8px 59px -11px rgba(0,0,0,0.75);
     padding-top: 10px;
 }
-.license{
-    margin-left: 100px;
-    font-size:1.25em;
+.menu{
+    height: 70px;
+    width: 100%;
+    padding-left: 10vw;
+}
+.menu.bar{
+    display: block;
 }
 .pictures.information{
     width: 100%;
@@ -47,24 +51,8 @@
 }
 .pictures.information.fish{
     background-color: #dddce8;
-    height:1000px;
+    height:970px;
     padding-top: 8vw;
-}
-.infotext{
-    font-size: 1.25em;
-    width: 850px;
-    display: inline-flex;
-    flex-direction: column;
-}
-.logo{
-    margin-left: 10vw;
-    margin-top: 10vw;
-    position: absolute;
-    z-index:2;
-}
-.logoLower{
-    margin-left: 10vw;
-    height:80px
 }
 .stats{
     width:100%;
@@ -76,6 +64,54 @@
     -moz-box-shadow: inset 0px -8px 99px -10px #101010;
     box-shadow: inset 0px -8px 99px -10px #101010;
     display: inline-flex;
+}
+.workbox{
+    width: 100%;
+    height: 350px;
+    display: block;
+    background-color: #e5e5e5;
+    opacity: 0.95;
+    -webkit-box-shadow: inset 0px -8px 99px -10px rgb(50, 49, 51);
+    -moz-box-shadow: inset 0px -8px 99px -10px rgb(50, 49, 51);
+    box-shadow: inset 0px 0px 99px -10px rgb(50, 49, 51);
+}
+.pictures{
+    width: 100%;
+    height: 350px;
+    display: block;
+    background-color: #3d2c8e;
+    opacity:0.9;
+    -webkit-box-shadow: inset 0px 8px 99px -10px rgba(51,11,51,1);
+    -moz-box-shadow: inset 0px 8px 99px -10px rgba(51,11,51,1);
+    box-shadow: inset 0px 8px 99px -10px rgba(51,11,51,1);
+}
+#particles-js{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0.8;
+    background: #372675;
+    z-index:1;
+}
+.logo{
+    margin-left: 100px;
+    margin-top: 130px;
+    position: absolute;
+    z-index:2;
+}
+.logoLower{
+    margin-left: 10vw;
+    height:80px
+}
+.license{
+    margin-left: 100px;
+    font-size:1.25em;
+}
+.infotext{
+    font-size: 1.25em;
+    width: 850px;
+    display: inline-flex;
+    flex-direction: column;
 }
 .statstextbox{
     display: inline-block;
@@ -93,6 +129,14 @@
     flex-direction: row;
     display: inline-flex;
 }
+.text{
+    font-size:2em;
+    font-weight: lighter;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+}
 .bracket{
     font-size: 10em;
     display: inline-flex;
@@ -102,13 +146,6 @@
     font-size: 1.5em;
     font-weight: inherit;
     margin-top: 7vw;
-}
-.workbox.pictures{
-    background-color: #e5e5e5;
-    opacity: 0.95;
-    -webkit-box-shadow: inset 0px -8px 99px -10px rgb(50, 49, 51);
-    -moz-box-shadow: inset 0px -8px 99px -10px rgb(50, 49, 51);
-    box-shadow: inset 0px 0px 99px -10px rgb(50, 49, 51);
 }
 .screw{
     display: inline-flex;
@@ -133,22 +170,25 @@ img.screw {
     -webkit-animation-iteration-count:  infinite;
     -webkit-animation-timing-function: linear;
 }
-
-.pictures{
-    width: 100%;
-    height: 350px;
-    display: block;
-    background-color: #3d2c8e;
-    opacity:0.9;
-    -webkit-box-shadow: inset 0px 8px 99px -10px rgba(51,11,51,1);
-    -moz-box-shadow: inset 0px 8px 99px -10px rgba(51,11,51,1);
-    box-shadow: inset 0px 8px 99px -10px rgba(51,11,51,1);
+.infoimg{
+    float:right;
+    display:inline-flex;
+    width:25vw;
+    height:25vw;
+    margin-right:3vw;
 }
 .inside{
-    margin-left: 15vw;
     padding-top:5vw!important;
     width:100%;
     height: 100%;
+    display: inline-flex;
+    flex-direction: row;
+}
+.mode{
+    margin-left: 180px;
+    height: 150px;
+    width: 150px;
+    position: relative;
 }
 .semitrans{
     padding-left: 10px;
@@ -160,27 +200,6 @@ img.screw {
 }
 .semitrans:hover{
     opacity: 0.85;
-}
-.text{
-    font-size:2em;
-    font-weight: lighter;
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: white;
-}
-#particles-js{
-    width: 100%;
-    height: 400px;
-    position: absolute;
-    opacity: 0.8;
-    background: #372675;
-    z-index:1;
-}
-.menu{
-    height: 6vw;
-    width: 100%;
-    padding-left: 10vw;
 }
 .link {
     color: #000000;
@@ -206,13 +225,159 @@ a:hover, a:visited, a:link, a:active
     width: 100%;
     transition: width .8s;
 }
-.menu.bar{
-    display: block;
-}
+
 li{
     margin-top: 2vw;
     font-size: 2em;
     display: inline-flex;
     flex-direction: row;
     margin-left: 3vw;
+}
+.hh{
+    font-size:3em;
+    display:block;
+}
+.lh{
+    font-size:3em;
+    font-weight:lighter;
+}
+@media(max-width:1250px){
+    .infotext{
+        font-size: 1.18em;
+    }
+}
+@media(max-width:1040px){
+    .infoimg{
+        margin-right: 0px;
+    }
+    .pictures.information{
+        padding-left: 20px;
+        font-size: 1.3em;
+    }
+    .mode{
+        margin-left: 100px;
+    }
+}
+@media(max-width:780px){
+    .pictures.information{
+        font-size: 1.17em;
+    }
+    .hh{
+        font-size:2em;
+    }
+    .lh{
+        font-size: 2em;
+    }
+    .textBox{
+        margin-left:20px;
+    }
+    .stats{
+        padding-left: 20px;
+    }
+    .inside{
+        margin-left: 5vw;
+        display: inline-block;
+    }
+    .statstextbox{
+        margin-left:40px;
+    }
+    .pictures{
+        height: 550px;
+    }
+    .mode{
+        margin-left: 200px;
+    }
+    .text{
+        font-size:1.5em;
+    }
+    .topbar{
+        height:300px;
+    }
+}
+@media(max-width:670px){
+    .stats{
+        padding-left: 5px;
+    }
+    .work{
+        font-size: 1.3em;
+    }
+    .license{
+        margin-left:20px;
+    }
+    .semitrans{
+        width:140px;
+        height:140px;
+    }
+}
+@media(max-width:580px){
+    .topbar{
+        height:200px;
+    }
+    .stats{
+        padding-left: 0px;
+    }
+    .work{
+        font-size: 1em;
+    }
+    .bracket{
+        font-size:8em;
+    }
+    .workbox{
+        height:250px
+    }
+    .bignumber{
+        font-size: 2.5em;
+    }
+    .infotext{
+        font-size: 1.1em;
+    }
+    .license{
+        font-size:0.95em;
+    }
+    .logoLower{
+        margin-left:20px;
+    }
+}
+@media(max-width:490px){
+    .mode{
+        margin-left: 100px;
+    }
+    .bracket{
+        font-size: 5em;
+    }
+    .work{
+        font-size: 0.8em;
+    }
+    .workbox{
+        height: 180px;
+    }
+    li{
+        font-size:1.4em;
+        margin-top:30px;
+        margin-left:10px;
+    }
+    .logoLower{
+        margin-left: 0px;
+    }
+    .license{
+        margin-left: 0px;
+        font-size: 0.7em;
+    }
+    .bignumber{
+        font-size:1.5em;
+    }
+}
+@media(max-width:420px) {
+    .infotext{
+        font-size: 0.9em;
+    }
+    .hh{
+        font-size:1.5em;
+    }
+    .hl{
+        font-size:1.5em;
+    }
+    .pictures.information.fish{
+        height: 750px;
+    }
 }
