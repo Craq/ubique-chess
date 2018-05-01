@@ -49,6 +49,40 @@
     if (!wait_for_script) {
         document.addEventListener("DOMContentLoaded", init);
     }
+    $('#load1').click(function(){
+        var text = document.getElementById("fenInput").value;
+        var ch = Chess();
+        var validation = ch.validate_fen(text);
+        if(validation['valid']) {
+            if(ch.turn()==='b'){
+                console.log('must be white turn');
+            }
+            else {
+                game.loadFen(text);
+                console.log('success');
+            }
+
+        }else{
+            console.log(validation['error']);
+        }
+    });
+    $('#load2').click(function(){
+        var text = document.getElementById("fenInput2").value;
+        var ch = Chess();
+        var validation = ch.validate_fen(text);
+        if(validation['valid']) {
+            if(ch.turn()==='b'){
+                console.log('must be white turn');
+            }
+            else {
+                game.loadFen(text);
+                console.log('success');
+            }
+
+        }else{
+            console.log(validation['error']);
+        }
+    });
 </script>
 </body>
 </html>

@@ -30,10 +30,25 @@ html{
     background-image: url('../img/other/white.jpeg');
     opacity: 0.85;
 }
-.outboxright{
-    display:none;
+.hiddenBox{
+    display: none;
+    word-wrap:break-word;
+    position: relative;
     width: 200px;
-    height: 140px;
+    height: 250px;
+    margin-top: 11vw;
+    margin-left: 5px;
+    background-color: #0a1769;
+    border: 1px solid #444444;
+    border-radius: 8px;
+    background-image: url('../img/other/white.jpeg');
+    opacity: 0.85;
+}
+.outboxright{
+    word-wrap:break-word;
+    position: relative;
+    width: 200px;
+    height: 250px;
     margin-top: 11vw;
     margin-left: 5px;
     background-color: #0a1769;
@@ -50,9 +65,37 @@ html{
     margin-left: 15px;
 }
 .controls {
+    display: inline-block;
     margin-left: 1.5vw;
     margin-top: 1.5vw;
     height: 100%;
+}
+.load{
+    font-size:1em;
+    display: inline-block;
+    border-radius: 3px;
+    border:1px solid dimgray;
+    background-color: #ff9153;
+    opacity: 0.9;
+    box-shadow: 1px 1px 10px 1px #362b23;
+    height: 2vw;
+    width: 70%;
+    margin-left: 0.5vw;
+    text-align: center;
+    outline:none;
+    margin-top: 1vw;
+}
+input {
+    width: 11vw;
+    margin-top: 7%;
+    font-size: 1em;
+    height: 10%;
+}
+.load:hover{
+    color: #3d49ab;
+}
+.load:active{
+    box-shadow: inset 1px 1px 10px 1px #362b23;
 }
 #newGame{
     font-size:1em;
@@ -77,7 +120,7 @@ html{
 }
 #consoleLog{
     display: inline-block;
-    width: 85%;
+    width: 12vw;
     background-color: rgba(215,214,221,0.9);
     opacity: 0.85;
     overflow-y: scroll;
@@ -91,7 +134,15 @@ html{
     #newGame{
         font-size: 12px;
     }
+    .load{
+        font-size: 12px;
+    }
     .outbox{
+        font-size: 12px;
+        width: 150px;
+        height: 180px;
+    }
+    .outboxright{
         font-size: 12px;
         width: 150px;
         height: 180px;
@@ -101,7 +152,15 @@ html{
     #newGame {
         font-size: 8px;
     }
+    .load {
+        font-size: 8px;
+    }
     .outbox{
+        font-size: 12px;
+        width: 150px;
+        height: 180px;
+    }
+    .outboxright{
         font-size: 12px;
         width: 150px;
         height: 180px;
@@ -112,15 +171,17 @@ html{
         display: none;
     }
     .outboxright{
+        display: none;
+    }
+    .hiddenBox{
         display: block;
-        width: 40vw;
+        width: 78vw;
         height: 140px;
         margin-top: 5px;
-        margin-left: 50px;
-        padding-left: 10px;
     }
     #consoleLog{
-        width: 35vw;
+        margin-top: 1.5vw;
+        width: 30vw;
     }
     .playground{
         display: block;
@@ -135,8 +196,15 @@ html{
         flex-direction: column;
     }
     .controls{
+        width: 35vw;
         margin-top: 0.5vw;
-        margin-left: 0.5vw;
+        margin-left: 2vw;
+    }
+    input{
+        margin-top: 1vw;
+    }
+    .load{
+        height: 2.5vw;
     }
 }
 @media(max-width:450px) {

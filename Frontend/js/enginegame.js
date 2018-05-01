@@ -44,6 +44,11 @@ function engineGame(options) {
     
     ///TODO: Eval starting posistions. I suppose the starting positions could be different in different chess varients.
 
+    function loadFen(load){
+        game = new Chess(load);
+        board.position(load);
+    }
+
     function displayStatus() {
         var status = 'Engine: ';
         if(!engineStatus.engineLoaded) {
@@ -85,6 +90,38 @@ function engineGame(options) {
     function updateClock() {
         displayClock('white', time.wtime);
         displayClock('black', time.btime);
+        var status = '';
+
+        var moveColor = 'White';
+        if (game.turn() === 'b') {
+            moveColor = 'Black';
+        }
+
+        // checkmate?
+        if (game.in_checkmate() === true) {
+            status = 'Game over, ' + moveColor + ' is in checkmate.';
+        }
+
+        // draw?
+        else if (game.in_draw() === true) {
+            status = 'Game over, drawn position';
+        }
+
+        // game still on
+        else {
+            status = moveColor + ' to move';
+
+            // check?
+            if (game.in_check() === true) {
+                status += ', ' + moveColor + ' is in check';
+            }
+        }
+        $('#fen').html(game.fen());
+        $('#fen2').html(game.fen());
+        $('#pgn').html(game.pgn());
+        $('#pgn2').html(game.pgn());
+        $('#status').html(status);
+        $('#status2').html(status);
     }
 
     function clockTick() {
@@ -266,7 +303,17 @@ function engineGame(options) {
             this.setSkillLevel(0);
             uciCmd('setoption name King Safety value 0'); /// Agressive 100 (it's now symetric)
         },
-        loadPgn: function(pgn) { game.load_pgn(pgn); },
+        loadFen: function(fen) {
+            game= new Chess(fen);
+            board.position(fen);
+            if (game.turn() === 'b') {
+                playerColor = 'black';
+            }
+            engineStatus.engineReady = false;
+            engineStatus.search = null;
+            displayStatus();
+            prepareMove();
+            },
         setPlayerColor: function(color) {
             playerColor = color;
             board.orientation(playerColor);

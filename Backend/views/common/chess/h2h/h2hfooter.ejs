@@ -4,9 +4,16 @@
 <script src="js/chessboard-0.3.0.js"></script>
 <script src="main.js"></script>
 <script>
-    var init = function() {
-        var board,
+    var board;
+    var game;
+    var init = function(load) {
+        var
             game = new Chess(),
+            statusEl = $('#status'),
+            statusDe = $('#status2'),
+            fenEl = $('#fen'),
+            fenDe = $('#fen2'),
+            pgnDe = $('#pgn2'),
             pgnEl = $('#pgn');
 
         // do not pick up pieces if the game is over
@@ -64,24 +71,55 @@
                     status += ', ' + moveColor + ' is in check';
                 }
             }
-
+            statusEl.html(status);
+            fenEl.html(game.fen());
             pgnEl.html(game.pgn());
+            statusDe.html(status);
+            fenDe.html(game.fen());
+            pgnDe.html(game.pgn());
         };
-
-        var cfg = {
-            draggable: true,
-            position: 'start',
-            onDragStart: onDragStart,
-            onDrop: onDrop,
-            onSnapEnd: onSnapEnd
-        };
+            var cfg = {
+                draggable: true,
+                position: 'start',
+                onDragStart: onDragStart,
+                onDrop: onDrop,
+                onSnapEnd: onSnapEnd
+            };
         board = ChessBoard('board', cfg);
+        if(!load=='') {
+            console.log(load);
+            board.position(load);
+            game = new Chess(load);
+            console.log(game.pgn());
+        }
         updateStatus();
     };
-    $(document).ready(init);
+    $(document).ready(init(''));
     $('#newGame').click(function(){
         console.log('restart');
         init();
+    });
+    $('#load1').click(function(){
+        var text = document.getElementById("fenInput").value;
+        var validation = game.validate_fen(text);
+        if(validation['valid']) {
+            game.load(text);
+            console.log('success');
+            init(game.fen())
+        }else{
+            console.log(validation['error']);
+        }
+    });
+    $('#load2').click(function(){
+        var text = document.getElementById("fenInput2").value;
+        var validation = game.validate_fen(text);
+        if(validation['valid']) {
+            game.load(text);
+            console.log('success');
+            init(game.fen())
+        }else{
+            console.log(validation['error']);
+        }
     });
 </script>
 </body>
