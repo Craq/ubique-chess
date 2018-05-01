@@ -11,7 +11,8 @@ function configureEndpoints(app) {
 
     //Сторінки
     //Головна сторінка
-    app.get('/', pages.choice);
+    app.get('/', pages.mainPage);
+    app.get('/choice', pages.choice);
     app.get('/h2h', pages.h2h);
     app.get('/h2m', pages.h2m);
     app.get('/strats',pages.strats);

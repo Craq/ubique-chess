@@ -1,0 +1,32 @@
+.cont{
+    width: 100%;
+    height: 100%;
+}
+.topbar{
+    width: 100%;
+    height: 28vw;
+    background: url('../img/other/head2.jpeg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.topbar.over{
+    background: #372675;
+    opacity: 0.75;
+    position: absolute;
+    z-index: 1;
+    box-shadow: inset 0 -25px 19px -6px #220f36;
+}
+.logo{
+    margin-left: 10vw;
+    margin-top: 10vw;
+    position: absolute;
+    z-index:2;
+}
+#particles-js{
+    width: 100%;
+    height: 28vw;
+    opacity: 0.75;
+    position: absolute;
+    background: #372675;
+    z-index:1;
+}
