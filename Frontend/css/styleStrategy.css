@@ -2,7 +2,7 @@ html{
     background: #2b5876; /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #2b5876, #4e4376); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #2b5876, #4e4376);
-    font-size: 14px;
+    font-size: 0.875em;
 }
 .container{
     width:60%;
@@ -30,7 +30,7 @@ html{
     font-size: 20px;
     border-radius: 5px;
     border: hidden;
-    font-size: 20px;
+    font-size: 1.250em;
 }
 .strat{
     margin-top: 10px;
@@ -65,10 +65,10 @@ html{
         width: 85%;
     }
     html{
-        font-size: 12px;
+        font-size: 0.750em;
     }
     .strat-title{
-        font-size: 18px;
+        font-size: 1.125em;
     }
 }
 @media(max-width:490px){
@@ -76,9 +76,9 @@ html{
         width: 95%;
     }
     html{
-        font-size: 9px;
+        font-size: 0.563em;
     }
     .strat-title{
-        font-size: 16px;
+        font-size: 1em;
     }
 }
