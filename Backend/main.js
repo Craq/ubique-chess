@@ -5,7 +5,20 @@ var express = require('express');
 var path = require('path');
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
+var mongoose=require('mongoose');
+mongoose.connect('mongodb://localhost/stratsdb');
+var db=mongoose.connection;
+db.on('error', console.error.bind(console,'connecting error'));
+db.once('open',function(){
+    console.log('Connected DB');
+});
 
+var StratBp=new mongoose.Schema({
+    name:String,
+    description:String,
+    moves:[String],
+});
+var Strat=mongoose.model('Strat',StratBp);
 function configureEndpoints(app) {
     var pages = require('./pages');
 
@@ -16,6 +29,12 @@ function configureEndpoints(app) {
     app.get('/h2h', pages.h2h);
     app.get('/h2m', pages.h2m);
     app.get('/strats',pages.strats);
+    app.get('/strats/lol',function (req,res) {
+        console.log("aaaaa")
+        Strat.find({},function (err,stratArr) {
+            res.send(stratArr);
+        })
+    })
     //Якщо не підійшов жоден url, тоді повертаємо файли з папки www
     app.use(express.static(path.join(__dirname, '../Frontend')));
 }
