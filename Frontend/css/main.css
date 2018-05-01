@@ -457,3 +457,7 @@ li{
     text-align:center;
     font-weight:bold;
 }
+.link.but{
+    border: none;
+    background-color: white;
+}
