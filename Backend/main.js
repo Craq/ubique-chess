@@ -35,6 +35,21 @@ function configureEndpoints(app) {
             res.send(stratArr);
         })
     });
+    app.post('/strats/addstrat',function(req,res){
+        var stratData=req.body;
+        //console.log(stratData);
+        var strat=new Strat({
+            name:stratData.name,
+            description:stratData.description,
+            moves:stratData.moves
+        })
+        strat.save(function (err,strat_db) {
+            if(!err) console.log('added '+strat_db.name)
+        })
+        res.set({
+            result:'+'
+        })
+    })
     //Якщо не підійшов жоден url, тоді повертаємо файли з папки www
     app.use(express.static(path.join(__dirname, '../Frontend')));
 }

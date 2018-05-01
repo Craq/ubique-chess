@@ -36,17 +36,60 @@ var moves2 = ['rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR','rnbqkbnr/pppp1ppp
 var moves = [moves1,moves2];
 var onMove = [0,0];*/
 $(document).ready(function(){
+    $('.sbm-button').click(function () {
+        var $node='<div class="popup"' +
+            '    <div class="submit-form">' +
+            '        <span class="close">&times</span>' +
+            '        <div class="submission">' +
+            '            <span class="subm-text">Strat name:</span><input class="sbm-input name" text="text" name="stratName"><br>' +
+            '            <span class="subm-text">Description:</span><input class="sbm-input desc" text="text" name="description"><br>' +
+            '            <span class="subm-text">Moves in FEN:</span><input class="sbm-input fen" text="text" name="fen"><br>' +
+            '            <span class="smt">Submit</span>' +
+            '        </div>' +
+            '    </div>' +
+            '</div>';
+        $('body').append($node);
+        $('.close').click(function () {
+            $('.popup').remove();
+        });
+        $('.smt').click(function () {
+            //var $input=$('.sbm-input');
+            //console.log($input);
+            var name=$('.sbm-input.name').val();
+            var description=$('.sbm-input.desc').val();
+            var moves=$('.sbm-input.fen').val().split(',');
+            var data={
+                name:name,
+                description:description,
+                moves:moves
+            }
+            $.ajax({
+               url:'/strats/addstrat',
+               type:'POST',
+               contentType:'application/json',
+                data:JSON.stringify(data),
+                success:function (data) {
+                   if(data.result=='+')
+                    console.log(data);
+                },
+                fail:function () {
+                    console.log('submit strat failed');
+                }
+            });
+            $('.popup').remove();
+        })
+    });
     var currentMove=0;
     var moved=false;
     setInterval(function () {
         for(var i = 0;i<boards.length;i++){
-            console.log(moves[i].length)
+            //console.log(moves[i].length)
             if(moves[i].length>currentMove) {
                 boards[i].position(moves[i][currentMove])
-                console.log(moves[i])
+               // console.log(moves[i])
                 moved=true;
             }
-            console.log('cur move:'+currentMove)
+            //console.log('cur move:'+currentMove)
         };
         currentMove++;
         if(!moved)
