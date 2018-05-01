@@ -25,7 +25,7 @@ function configureEndpoints(app) {
     //Сторінки
     //Головна сторінка
     app.get('/', pages.mainPage);
-    app.get('/', pages.choice);
+    app.get('/choice', pages.choice);
     app.get('/h2h', pages.h2h);
     app.get('/h2m', pages.h2m);
     app.get('/strats',pages.strats);
@@ -34,7 +34,7 @@ function configureEndpoints(app) {
         Strat.find({},function (err,stratArr) {
             res.send(stratArr);
         })
-    })
+    });
     //Якщо не підійшов жоден url, тоді повертаємо файли з папки www
     app.use(express.static(path.join(__dirname, '../Frontend')));
 }
