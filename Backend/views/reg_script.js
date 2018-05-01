@@ -1,4 +1,4 @@
-
+/**
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/usersdb');
 var db = mongoose.connection;
@@ -38,3 +38,4 @@ function addUser(var v
         if (!err) console.log('added ' + strat_db)
     })
 }
+*/

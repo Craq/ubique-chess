@@ -1,9 +1,35 @@
 <ul class="menu bar">
     <li><a href="/" class="link active">Home</a></li>
     <li><a href="/choice" class="link">Play</a></li>
-    <li><a href="#regist" class="link" id="register">Register</a></li>
-    <li><a href="#" class="link">About us</a></li>
+    <li><button class="link but" onclick="document.getElementById('cover').style.display='block'" style="width:auto;">Login</button></li>
 </ul>
+<div id="cover" class="wow fadeIn" data-wow-duration="1s">
+<div id='login' class="login wow zoomIn" data-wow-duration="1s" data-wow-delay="0.25s">
+    <a href="/" class="cancel">&times</a>
+    <img src="img/other/icon.png" class="icon">
+    <div class="mainbox">
+    <p style="font-size:2em;margin-left:12px;">Log in</p>
+    <form action="" class="formbox" >
+        <b>Login:</b> <input type="text" id="login" placeholder="login"><br>
+        <b>Password:</b> <input type="password" id="password" placeholder="password"><br>
+        <button class="reg sub" onclick="addUser()">submit</button>
+    </form>
+        <button class="reg log" onclick="document.getElementById('regist').style.display='block';document.getElementById('login').style.display='none'">register</button>
+    </div>
+</div>
+    <div id="regist" class="login wow flipInX">
+        <a href="/" class="cancel">&times</a>
+        <div class="mainbox"style="margin-top:60px">
+            <p style="font-size:2em;margin-left:5px;">Create account</p>
+        <form action="" class="formbox" >
+            <b>Login:</b> <input type="text" id="login" placeholder="Your login"><br>
+            <b>Email:</b><input type="text" id="e-mail" placeholder="Your e-mail"><br>
+            <b>Password:</b><input type="password" id="password" placeholder="Your password"><br>
+            <button class="reg sub" style="margin-left:40px"onclick="addUser()">submit</button>
+        </form>
+    </div>
+    </div>
+</div>
 <div class="pictures">
     <div class="inside">
         <div class="mode wow zoomIn">
@@ -26,19 +52,6 @@
         </div>
     </div>
 </div>
-
-<div id="regist">
-    <a href="#" class="cancel">&times</a>
-    <p>Create an account:</p>
-    <form action="" method="POST">
-        <input type="text" id="login" placeholder="Your login"><br>
-        <input type="text" id="e-mail" placeholder="Your e-mail"><br>
-        <input type="password" id="password" placeholder="Your password"><br>
-
-        <button onclick="addUser()">submit</button>
-    </form>
-</div>
-<div id="cover"></div>
 
 <div class="workbox">
     <div class="textBox wow fadeIn" data-wow-duration="2.5s" data-wow-delay="0.3s">
@@ -112,5 +125,3 @@
     <img src="img/other/logo3.png" class="logoLower">
     <span class="license">© 2018 Chess.AI Technologies</span>
 </div>
-
-<script type="text/javascript" src="views/reg_script.js"></script>
