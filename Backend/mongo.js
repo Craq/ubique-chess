@@ -1,5 +1,5 @@
 var mongoose=require('mongoose');
-mongoose.connect('mongodb://localhost/stratsdb');
+mongoose.connect('mongodb://admin:admin@ds111420.mlab.com:11420/chessai');
 var db=mongoose.connection;
 db.on('error', console.error.bind(console,'connecting error'));
 db.once('open',function(){
