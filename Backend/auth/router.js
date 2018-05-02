@@ -1,30 +1,25 @@
 var express = require('express');
 var router = express.Router();
-var User = require('user.js');
-
+var User = require('./user.js');
+var url = require("url");
 
 //GET
 router.get('/', function (req, res, next) {
-    result.sendFile(path.join('index'));//
+    var http = require('http'),request = require('request');
+
+    var pathname = url.parse("https://localhost:5050/(index)").pathname;
+    return res.sendFile('/');//
 });
 //POST
 router.post('/', function (req, res, next) {
-    if (req.body.password !== req.body.passwordConf) {
-        var err = new Error('Passwords do not match.');
-        err.status = 400;
-        res.send("passwords dont match");
-        return next(err);
-    }
     if (req.body.email &&
         req.body.username &&
-        req.body.password &&
-        req.body.passwordConf) {
+        req.body.password) {
 
         var userData = {
             email: req.body.email,
             username: req.body.username,
             password: req.body.password,
-            passwordConf: req.body.passwordConf,
         }
 
         User.create(userData, function (error, user) {
@@ -50,5 +45,6 @@ router.post('/', function (req, res, next) {
         err.status = 400;
         return next(err);
     }
-})
+});
+module.exports = router;
 
