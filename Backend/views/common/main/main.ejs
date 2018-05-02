@@ -13,10 +13,10 @@
         <img src="img/other/icon.png" class="icon">
         <div class="mainbox">
             <p style="font-size:2em;margin-left:12px;">Log in</p>
-            <form action="/" class="formbox" method="post">
+            <form action="/#" class="loginForm formbox" method="post">
                 <b>Login:</b> <input type="text" id="login" name="logemail" placeholder="login"><br>
                 <b>Password:</b> <input type="password" name="logpassword" id="password" placeholder="password"><br>
-                <button class="reg sub" onclick="addUser()">submit</button>
+                <button class="logBut reg sub" type="submit">submit</button>
             </form>
             <button class="reg log"
                     onclick="document.getElementById('regist').style.display='block';document.getElementById('login').style.display='none'">
@@ -28,12 +28,12 @@
         <a href="/" class="cancel">&times</a>
         <div class="mainbox" style="margin-top:60px">
             <p style="font-size:2em;margin-left:5px;">Create account</p>
-            <form action="/" method="post" class="formbox">
+            <form action="/" method="post" class="registerForm formbox">
                 <b>Login:</b> <input type="text" id="login" name="username" placeholder="Your login"><br>
                 <b>Email:</b><input type="text" id="e-mail" name="email" placeholder="Your e-mail"><br>
                 <b>Password:</b><input type="password" id="password" name="passwordConf"
                                        placeholder="Your password"><br>
-                <button class="reg sub" style="margin-left:40px" value="REGISTER" onclick="addUser()">submit</button>
+                <button class=" regBut reg sub" style="margin-left:40px" value="REGISTER" type="submit">submit</button>
             </form>
         </div>
     </div>

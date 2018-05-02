@@ -6,7 +6,7 @@ var path = require('path');
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
 
-var router = express.Router();
+//var router = express.Router();
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 
@@ -83,8 +83,8 @@ function startServer(port) {
     app.use(bodyParser.json());
 
     app.use(express.static('index'));
-    var routes = require('../router');
-    app.use('/', routes);
+    //var routes = require('../router');
+    //app.use('/', routes);
 
     //Налаштовуємо сторінки
     configureEndpoints(app);
