@@ -1,33 +1,41 @@
 <ul class="menu bar">
     <li><a href="/" class="link active">Home</a></li>
     <li><a href="/choice" class="link">Play</a></li>
-    <li><button class="link but" onclick="document.getElementById('cover').style.display='block'" style="width:auto;">Login</button></li>
+    <li>
+        <button class="link but" onclick="document.getElementById('cover').style.display='block'" style="width:auto;">
+            Login
+        </button>
+    </li>
 </ul>
 <div id="cover" class="wow fadeIn" data-wow-duration="1s">
-<div id='login' class="login wow zoomIn" data-wow-duration="1s" data-wow-delay="0.25s">
-    <a href="/" class="cancel">&times</a>
-    <img src="img/other/icon.png" class="icon">
-    <div class="mainbox">
-    <p style="font-size:2em;margin-left:12px;">Log in</p>
-    <form action="" class="formbox" >
-        <b>Login:</b> <input type="text" id="login" placeholder="login"><br>
-        <b>Password:</b> <input type="password" id="password" placeholder="password"><br>
-        <button class="reg sub" onclick="addUser()">submit</button>
-    </form>
-        <button class="reg log" onclick="document.getElementById('regist').style.display='block';document.getElementById('login').style.display='none'">register</button>
+    <div id='login' class="login wow zoomIn" data-wow-duration="1s" data-wow-delay="0.25s">
+        <a href="/" class="cancel">&times</a>
+        <img src="img/other/icon.png" class="icon">
+        <div class="mainbox">
+            <p style="font-size:2em;margin-left:12px;">Log in</p>
+            <form action="/" class="formbox" method="post">
+                <b>Login:</b> <input type="text" id="login" name="logemail" placeholder="login"><br>
+                <b>Password:</b> <input type="password" name="logpassword" id="password" placeholder="password"><br>
+                <button class="reg sub" onclick="addUser()">submit</button>
+            </form>
+            <button class="reg log"
+                    onclick="document.getElementById('regist').style.display='block';document.getElementById('login').style.display='none'">
+                register
+            </button>
+        </div>
     </div>
-</div>
     <div id="regist" class="login wow flipInX">
         <a href="/" class="cancel">&times</a>
-        <div class="mainbox"style="margin-top:60px">
+        <div class="mainbox" style="margin-top:60px">
             <p style="font-size:2em;margin-left:5px;">Create account</p>
-        <form action="" class="formbox" >
-            <b>Login:</b> <input type="text" id="login" placeholder="Your login"><br>
-            <b>Email:</b><input type="text" id="e-mail" placeholder="Your e-mail"><br>
-            <b>Password:</b><input type="password" id="password" placeholder="Your password"><br>
-            <button class="reg sub" style="margin-left:40px"onclick="addUser()">submit</button>
-        </form>
-    </div>
+            <form action="/" method="post" class="formbox">
+                <b>Login:</b> <input type="text" id="login" name="username" placeholder="Your login"><br>
+                <b>Email:</b><input type="text" id="e-mail" name="email" placeholder="Your e-mail"><br>
+                <b>Password:</b><input type="password" id="password" name="passwordConf"
+                                       placeholder="Your password"><br>
+                <button class="reg sub" style="margin-left:40px" value="REGISTER" onclick="addUser()">submit</button>
+            </form>
+        </div>
     </div>
 </div>
 <div class="pictures">
@@ -35,19 +43,19 @@
         <div class="mode wow zoomIn">
             <div class="text"><i>Local chess</i></div>
             <a href="/h2h">
-            <img class="semitrans" src="img/other/chess.jpg">
+                <img class="semitrans" src="img/other/chess.jpg">
             </a>
         </div>
         <div class="mode wow zoomIn" data-wow-delay="0.5s">
             <a href="/h2m">
-            <div class="text"><i>Play Stockfish</i></div>
-            <img class="semitrans" src="img/other/stockfish.png">
+                <div class="text"><i>Play Stockfish</i></div>
+                <img class="semitrans" src="img/other/stockfish.png">
             </a>
         </div>
         <div class="mode wow zoomIn" data-wow-delay="1s">
             <a href="/strats">
-            <div class="text"><i>Learn strats</i></div>
-            <img class="semitrans" src="img/other/learn.png">
+                <div class="text"><i>Learn strats</i></div>
+                <img class="semitrans" src="img/other/learn.png">
             </a>
         </div>
     </div>
@@ -88,16 +96,27 @@
     <div class="infotext">
         <h class="wow fadeIn hh" data-wow-duration="1.25s"><b>Chess is good for young brains</b></h>
         <br>
-        Chess is valued as a game and an enjoyable way to spend time in many parts of the world. There are competing claims for its roots in India, China and Persia. Chess is recognised by the International Olympic Committee as a sport. There is a campaign to have it included in the 2020 Olympic Games in Tokyo.
+        Chess is valued as a game and an enjoyable way to spend time in many parts of the world. There are competing
+        claims for its roots in India, China and Persia. Chess is recognised by the International Olympic Committee as a
+        sport. There is a campaign to have it included in the 2020 Olympic Games in Tokyo.
         <br>
         <br>
-        Far from being a waste of time, chess can be of great benefit to children’s minds. Several academics have looked into this extensively. Chess has been persuasively linked with improving children’s concentration, problem-solving, critical, original and creative thinking – and even mathematical abilities. It is also said to help with memory storage and how young brains manage information – and should not only be perceived as a game for gifted children.
+        Far from being a waste of time, chess can be of great benefit to children’s minds. Several academics have looked
+        into this extensively. Chess has been persuasively linked with improving children’s concentration,
+        problem-solving, critical, original and creative thinking – and even mathematical abilities. It is also said to
+        help with memory storage and how young brains manage information – and should not only be perceived as a game
+        for gifted children.
         <br>
         <br>
-        Children are also equal in a chess match regardless of things that might divide them. Their age, gender, ethnic backgrounds and religious affiliations are of no significance. Chess can cross socio-economic and cultural boundaries and give otherwise disadvantaged children a chance to compete on equal terms.
+        Children are also equal in a chess match regardless of things that might divide them. Their age, gender, ethnic
+        backgrounds and religious affiliations are of no significance. Chess can cross socio-economic and cultural
+        boundaries and give otherwise disadvantaged children a chance to compete on equal terms.
         <br>
         <br>
-        It is also understood to be particularly helpful for integrating migrant children. While they learn a new language or how to negotiate a new culture, chess can help them engage with other children and adults without needing good linguistic skills. As intensified migration has increased diversity in classrooms, chess (and other games) play an important role.
+        It is also understood to be particularly helpful for integrating migrant children. While they learn a new
+        language or how to negotiate a new culture, chess can help them engage with other children and adults without
+        needing good linguistic skills. As intensified migration has increased diversity in classrooms, chess (and other
+        games) play an important role.
         <br>
     </div>
     <img src="img/other/people_chess.png" class="wow fadeInRight infoimg" data-wow-duration="1s">
@@ -110,7 +129,8 @@
         The Stockfish project started with the open source Glaurung engine, authored by Tord Romstad.
         In November 2008, Marco Costalba forked the Glaurung 2.1 code and introduced Stockfish 1.0.
         Tord and Joona Kiiski joined the Stockfish project and the Glaurung project slowly faded away.
-        Meanwhile, Stockfish quickly rose to become the strongest open source chess engine, with frequent updates every few months.
+        Meanwhile, Stockfish quickly rose to become the strongest open source chess engine, with frequent updates every
+        few months.
         Today, it remains one of the strongest engines in the world.
         <br>
         <h2 class="wow fadeIn lh" data-wow-delay="0.25s" data-wow-duration="1.25s">Authors</h2>
