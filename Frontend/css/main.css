@@ -258,6 +258,14 @@ li{
         margin-left: 100px;
     }
 }
+@media(max-width: 850px){
+    .work{
+        font-size: 1.3em;
+    }
+    .bracket{
+        font-size: 8em;
+    }
+}
 @media(max-width:780px){
     .pictures.information{
         font-size: 1.17em;
