@@ -55,6 +55,12 @@ html{
     float: right;
     display: inline-block;
 }
+.submit{
+    margin-left: 40%;
+    margin-right:  auto;
+    margin-top:10px;
+
+}
 @media(max-width:1000px) {
     .container {
         width: 75%;
@@ -81,13 +87,12 @@ html{
     .strat-title{
         font-size: 1em;
     }
+    .submit{
+        margin-left: 30%;
+    }
+
 }
-.submit{
-    margin-left: auto;
-    margin-right: auto;
-    margin-top:10px;
-    width: 0%;
-}
+
 .sbm-button{
     background: rgba(151, 151, 151, 0.7);
     border-radius: 2px;

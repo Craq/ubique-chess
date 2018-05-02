@@ -36,7 +36,7 @@ function configureEndpoints(app) {
     app.get('/h2m', pages.h2m);
     app.get('/strats', pages.strats);
     app.get('/strats/lol', function (req, res) {
-        console.log("aaaaa")
+        //console.log("aaaaa")
         Strat.find({}, function (err, stratArr) {
             res.send(stratArr);
         })
