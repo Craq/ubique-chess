@@ -80,21 +80,18 @@ $(document).ready(function(){
         })
     });
     var currentMove=0;
-    var moved=false;
     setInterval(function () {
         for(var i = 0;i<boards.length;i++){
             //console.log(moves[i].length)
-            if(moves[i].length>currentMove) {
-                boards[i].position(moves[i][currentMove])
+            // if(moves[i].length>currentMove) {
+                var move=currentMove%moves[i].length;
+                console.log(move);
+                boards[i].position(moves[i][move])
                // console.log(moves[i])
-                moved=true;
-            }
             //console.log('cur move:'+currentMove)
         };
         currentMove++;
-        if(!moved)
-            currentMove=0;
-        moved=false;
+
     },1000);
     getStrats()
 });
