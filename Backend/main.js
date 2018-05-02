@@ -79,3 +79,20 @@ function startServer(port) {
 }
 
 exports.startServer = startServer;
+/*
+function f(app) {/!*login
+    app.use(session({
+        resave: true,
+        saveUnitialized: false,
+        store: new MongoStore({mongooseConnection: db})
+    }));*!/
+
+    app.use({
+        store: new store({mongooseConnection: db})
+    });
+    app.use(bodyParser.json());
+
+    var routes = require('auth/router');
+    app.use('/', routes);
+
+}*/
